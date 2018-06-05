@@ -420,11 +420,11 @@ require "webmock/rspec"
         it "returns a hash of verbose information" do
           expect(subject.details["Format"]).to match /^JPEG/
           if MiniMagick.cli == :imagemagick
-            expect(subject.details["Channel depth"]["Red"]).to eq "8-bit"
+            expect(subject.details["Channel depth"]["red"]).to eq "8-bit"
             expect(subject.details).to have_key("Background color")
             expect(subject.details["Properties"]).to have_key("date:create")
           else
-            expect(subject.details["Channel Depths"]["Red"]).to eq "8 bits"
+            expect(subject.details["Channel Depths"]["red"]).to eq "8 bits"
             expect(subject.details).to have_key("Resolution")
           end
         end
